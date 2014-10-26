@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <script src="http://localhost:3000/release/cloudstitch.dev.js" app="ted/receipt-tracker"></script>
+    <link type="cloudstitch/gsheet" href="http://cloudstitch.io/ted/receipt-tracker/datasource/sheet" />
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/receipt-tracker.css" rel="stylesheet">
+
+   <script type="text/javascript" src="js/jquery.min.js"></script>
+
+   <link type="cloudstitch/gsheet" href="http://cloudstitch.io/ted/catering-menu/datasource/sheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8 col-md-offset-1 col-lg-offset-2 title">
+          <h1 class="clearfix">
+            <span>UIST 2014 Trip</span>
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-6 col-md-offset-1 col-lg-offset-3">
+          <div class="card">
+            <form class="" connect="rows" class="card" role="form">
+
+              <div class="form-group">
+                <label for="inputEmail3" class="control-label">Amount</label>
+                <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input connect="col(amount)" type="text" class="form-control">
+                </div>
+              </div>
+
+                 <div class="form-group">
+                <label for="inputEmail3" class="control-label">AccountNo</label>
+                <div class="input-group">
+                  <input connect="col(accountno)" type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputEmail3" class="control-label">Category</label>
+                <select connect="col(category)" class="form-control">
+                  <option>Transportation</option>
+                  <option>Meals</option>
+                  <option>Lodging</option>
+                  <option>Conference Fees</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputEmail3" class="control-label">Photo</label>
+                <input connect="col(photo)" type="file" />
+              </div>
+
+              <div class="form-group">
+                <label for="inputEmail3" class="control-label">Comments</label>
+                <textarea connect="col(comment)" class="form-control" placeholder="Text input"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-default">Submit</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" style="margin-top: 25px;">
+        <div class="col-sm-12 col-md-8 col-lg-8 col-md-offset-1 col-lg-offset-2">
+          <div connect="rows">
+            <div class="card" style="margin-bottom: 20px">
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="row">
+                    <div class="col-md-2" connect="col(date)">Date</div>
+                    <div class="col-md-2"> $<span connect="col(amount)">Amount</span></div>
+                    <div class="col-md-3" connect="col(category)"></div>
+                  </div>
+                  <div class="row" style="margin-top: 10px">
+                    <div class="col-md-12" connect="col(comment)"></div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <img data-cts='this {"attribute":"src"} :is sheet|col(photo)' width="150"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </body>
+</html>

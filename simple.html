@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="http://localhost:3000/release/cloudstitch.dev.js" app="ted/receipt-tracker"></script>
+    <link type="cloudstitch/gsheet" href="http://cloudstitch.io/ted/receipt-tracker/datasource/sheet" />
+  </head>
+  <body>
+
+    <form connect="rows">
+      Amount: <input connect="col(amount)">
+      Photo: <input type="file" connect="col(photo)">
+      <button type="submit">Add</button>
+    </form>
+
+    <ul connect="rows">
+    <li connect="col(amount)"></li>
+    </ul>
+
+  </body>
+</html>
