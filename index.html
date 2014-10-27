@@ -7,7 +7,11 @@
   <link href="css/receipt-tracker.css" rel="stylesheet">
 
    <script type="text/javascript" src="js/jquery.min.js"></script>
-
+   <script>
+     $(function() {
+       $('.date').val((new Date()).toDateString());
+     });
+   </script>
   </head>
   <body>
     <div class="container">
@@ -22,7 +26,7 @@
         <div class="col-sm-12 col-md-8 col-lg-6 col-md-offset-1 col-lg-offset-3">
           <div class="card">
             <form class="" connect="rows" class="card" role="form">
-
+              <input style="display:none;" connect="col(date)" class="date" />
               <div class="form-group">
                 <label for="inputEmail3" class="control-label">Amount</label>
                 <div class="input-group">
